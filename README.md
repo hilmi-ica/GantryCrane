@@ -5,7 +5,7 @@ This section contains a codes that control basic movements of crane with the hel
 - [ROS Noetic](http://wiki.ros.org/noetic/Installation/Ubuntu)
 - Python with [cv2](https://pypi.org/project/opencv-python/) and [control](https://pypi.org/project/control/) installed
 ## Scan Control
-### Reuirements:
+### Requirements:
 - [ROS Noetic](http://wiki.ros.org/noetic/Installation/Ubuntu)
 - Python with [cv2](https://pypi.org/project/opencv-python/) installed
 - [TensorFlow](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/install.html#)
