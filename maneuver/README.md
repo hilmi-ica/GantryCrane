@@ -7,12 +7,12 @@ Please download these depth estimation models and put them on the "models" folde
 maneuvers.py
 
 ### Setup
-- Run roscormaneuvers.py -t reshuffle -x a -y be on terminal
-> roscore
+- Run roscore on terminal
+'''roscore'''
 - Run ros serial python on terminal
-> rosrun rosserial_python serial_node.py /dev/ttyUSB0
+'''rosrun rosserial_python serial_node.py /dev/ttyUSB0'''
 - Run rqt on terminal
-> rqt
+'''rqt'''
 
 ### Calibration
 - Run control1.py script
@@ -25,10 +25,10 @@ These are the steps to operate crane  manuevers:
 - If the encoder value is not right, do a calibration
 - Run maneuvers.py script on terminal with certain command for certain type of maneuver:
   1. Lift-off:
-  > python maneuvers.py -t lift-off
+  '''python maneuvers.py -t lift-off'''
   2. Lift-on:
-  > python maneuvers.py -t lift-on -x a -y b
+  '''python maneuvers.py -t lift-on -x a -y b'''
   3. Reshuffle:
-  > python maneuvers.py -t reshuffle -x a -y b
+  '''python maneuvers.py -t reshuffle -x a -y b'''
   Note: a and b are number between 0-5 and 0-3 for row and column location of related container respectively from left to right and down to up
 - Change mode in rqt (8, 9, and 10 for lift-off, lift-on, and reshuffle maneuver respectively)
