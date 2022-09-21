@@ -26,7 +26,7 @@ rqt
 ### Manuever
 These are the steps to operate crane  manuevers:
 - Run rcv2.py script with the selected detection models (my_ssd_mobnet for multicolor and SSDMobileNet_Container_160821 for blue color container)
-- Check the encoder value (around at the far left and around 28000 at the far right)
+- Check the encoder value (around 1000 at the far left and around 28000 at the far right)
 - If the encoder value is not right, do a calibration
 - Run maneuvers.py script on terminal with certain command for certain type of maneuver:
   1. Lift-off:
