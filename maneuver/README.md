@@ -4,7 +4,6 @@ Please download these depth estimation models and put them on the "models" folde
 - [DPT-Large](https://github.com/intel-isl/DPT/releases/download/1_0/dpt_large-midas-2f21e586.pt)
 - [DPT-Hybrid](https://github.com/intel-isl/DPT/releases/download/1_0/dpt_hybrid-midas-501f0c75.pt)
 - [MiDaS v2.1 Small](https://github.com/AlexeyAB/MiDaS/releases/download/midas_dpt/midas_v21_small-70d6b9c8.pt)
-maneuvers.py
 
 ### Setup
 - Run roscore on terminal
