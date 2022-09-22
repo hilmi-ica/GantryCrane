@@ -161,21 +161,45 @@ SCANNINGSPEED = 30
 # KP_S =	2.56334474e+01
 # KD_S =	4.28656764e+00
 
-# # PSO - ROBUST
-KP   =	32.70
-KI   =	28.52
-KD   =  5.09
-KP_S =	1.55
-KI_S =  -0.57
-KD_S =	1.03
+# # PSO - ROBUST (Reference 1)
+# KP   =	32.70
+# KI   =	28.52
+# KD   =  5.09
+# KP_S =	1.55
+# KI_S =  -0.57
+# KD_S =	1.03
 
-# # DDPG
+# # PSO - ROBUST (Reference 2)
+KP   =	39.735
+KI   =	39.319
+KD   =  5.926
+KP_S =	2.362
+KI_S =  -0.665
+KD_S =	1.197
+
+# # DDPG - 1 (Reference 1)
 # KP   =	73.49
 # KI   =	0.06
 # KD   =  84.83
 # KP_S =	65.31
 # KI_S =  13.50
 # KD_S =	-22.42
+
+# # DDPG - 2 (Reference 1)
+# KP   =	99.86
+# KI   =	2.58
+# KD   =  100
+# KP_S =	63.12
+# KI_S =  -97.83
+# KD_S =	-40.07
+
+# # DDPG - 3 (Reference 2)
+# KP   =	99.94
+# KI   =	29.73
+# KD   =  37.66
+# KP_S =	28.71
+# KI_S =  -100
+# KD_S =	-5.26
 
 SAMPLING_TIME = 50
 # SIMULATION_TIMEOUT = 8100
@@ -242,6 +266,22 @@ def x_reference():
         #still editable and needs some check and validation
         damp_rat = 0.7         #damping ratio
         Ts = 1.7                   
+        w = 4/(damp_rat*Ts)
+        num = w**3
+        den = [1,1.75*w, 2.15*w**2, 1.5*w**3]
+        x_ref_tf = tf(num,den)
+        x_ref_sys = feedback(x_ref_tf,-1)
+        t_sim = np.arange(0,10,0.05)
+        [x_ref,t] = step(0.5*x_ref_sys,t_sim)
+        teta_ref=np.zeros(len(x_ref))
+        return x_ref,teta_ref, t
+    
+ def x_reference2():
+        #x_ref model 3th order ITAE
+        #still editable and needs some check and validation
+        damp_rat = 0.5         #damping ratio
+        Ts = 3.5
+
         w = 4/(damp_rat*Ts)
         num = w**3
         den = [1,1.75*w, 2.15*w**2, 1.5*w**3]
@@ -466,7 +506,8 @@ def object_pointCb(object_point):
     var.object_pointValue = object_point.data
 
 # Invoke reference input
-var.x_ref, sway_ref, t_sim = x_reference()
+# var.x_ref, sway_ref, t_sim = x_reference()
+var.x_ref, sway_ref, t_sim = x_reference2()
 # print(var.x_ref)
 # plt.plot(t_sim,var.x_ref)
 # plt.show()
