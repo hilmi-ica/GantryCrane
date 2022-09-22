@@ -20,8 +20,9 @@ rqt
 ### Step Control
 These are the steps to operate crane with step control module:
 - Run coba.py script
-- Change the control method (step or reference) in Line 369-377 of modular_control_step.py script
-- Change the setpoint value in Line 27 (for step) or 240-253 (for reference) of modular_control_step.py script
+- Change the ratio value based on length of the string for sway calculation in Line 403 of of modular_control_step.py script
+- Change the control method (step or reference) in Line 409-417 of modular_control_step.py script
+- Change the setpoint value in Line 27 (for step) or 264-293 (for reference) of modular_control_step.py script
 - Make sure the controller and its gain parameter value is correct (PID-PID or PID-PD controller)
 - Check the encoder value (around 1000 at the far left and around 28000 at the far right) by running this command on terminal:
 ```
