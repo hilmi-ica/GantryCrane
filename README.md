@@ -18,3 +18,8 @@ This section contains a codes that execute types of crane maneuver based on iden
 - [TensorFlow](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/install.html#)
 - Tesseract OCR python's [wrapper](https://pypi.org/project/pytesseract/)
 - [PyTorch](https://pytorch.org/get-started/locally/) 
+
+### Note
+Setting up:
+- Install ROS [rosserial_arduino](http://wiki.ros.org/rosserial_arduino) package as the link's instruction.
+- Update the file to the Arduino board
